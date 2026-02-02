@@ -21,7 +21,7 @@ import { JoinValidationSchema } from './config/joi.validation';
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        uri: configService.get<string>('MONGODB') ?? 'mongodb://localhost:27017/pokemonsdb',
+        uri: configService.get<string>('MONGODB'),
         dbName: 'pokemonsdb',
       }),
       inject: [ConfigService],
